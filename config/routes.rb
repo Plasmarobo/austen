@@ -1,4 +1,9 @@
 HigginsCassidy::Application.routes.draw do
+  resources :users
+
+  get "blog/index"
+  get "blog/login"
+  get "blog/logout"
   resources :blogposts
 
   # The priority is based upon order of creation: first created -> highest priority.

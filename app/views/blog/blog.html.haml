@@ -1,0 +1,7 @@
+%.left.sidebar
+  -sidebar_content.each() |item|
+    %.sidebar_item
+      =image_tag item.icon
+      =link_to item.name item.link
+%.right.post
+  =render inline: post.content

@@ -1,0 +1,23 @@
+-form_for(@blogpost) do |f|
+  if @blogpost.errors.any?
+    %.{id: "error_explanation"}
+      %h2 =pluralize(@blogpost.errors.count, "error") 
+        prohibited this blogpost from being saved:
+
+      %ul
+      -@blogpost.errors.full_messages.each do |msg|
+
+  %.field
+    =f.label :name
+    %br
+    =f.text_field :name
+  %.field
+    =f.label :body
+    %br
+    =f.text_area :body
+  %.field
+    =f.label :create
+    %br
+    =f.date_select :create
+  %.actions
+    =f.submit

@@ -1,0 +1,18 @@
+%p{id: "notice"} =notice
+
+%p
+  %strong Name:
+  =@blogpost.name
+
+%p
+  %strong Body:
+  =@blogpost.body
+
+
+%p
+  %strong Create:
+  =@blogpost.create
+
+
+=link_to 'Edit', edit_blogpost_path(@blogpost) |
+=link_to 'Back', blogposts_path
