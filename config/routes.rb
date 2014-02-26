@@ -1,7 +1,5 @@
 HigginsCassidy::Application.routes.draw do
 
-  resources :users
-
   get 'about' => 'static_pages/about'
   get 'code' => 'static_pages/code'
   root to: "blog#blog"
