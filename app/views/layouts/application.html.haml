@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 %html
-  %head
-    %title HigginsCassidy
-      =stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-      =javascript_include_tag "application", "data-turbolinks-track" => true
-      =csrf_meta_tags
-
-  %body
-    %.outerbody
-     %.innerbody
-       =yield
+	%head
+    	%title HigginsCassidy
+			=stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+			=javascript_include_tag "application", "data-turbolinks-track" => true
+			=csrf_meta_tags
+	%body
+	    %.outerbody
+		    %.left.square_cell =image_tag header_img
+		    %.left.rect_cell =header_title
+		    %.innerbody
+			    %.left.sidebar
+					%.sidebar_item
+						%.sidebar_icon
+							=image_tag "blog.png"
+						%.sidebar_link
+							=link_to "Blog", "blog/blog"
+					%.sidebar_item
+						%.sidebar_icon
+							=image_tag "code.png"
+						%.sidebar_link
+							=link_to "Code", "code"
+					%.sidebar_item
+						%.sidebar_icon
+							=image_tag "me.png"
+						%.sidebar_link
+							=link_to "About", "about"
+					%.sidebar_item
+						%.sidebar_icon
+							=image_tag "github.png"
+						%.sidebar_link
+							=link_to "Github", "https://github.com/plasmarobo"
+					%.sidebar_item
+						%.sidebar_icon
+							=image_tag "wimap.png"
+						%.sidebar_link
+							=link_to "WiMap", "http://www.wimapnav.com"
+				%.left.block
+					=yield

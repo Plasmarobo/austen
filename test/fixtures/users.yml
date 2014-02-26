@@ -2,12 +2,14 @@
 
 one:
   name: MyString
-  social_network: MyString
   email: MyString
-  access_token: MyString
+  twitter: MyString
+  google: MyString
+  facebook: MyString
 
 two:
   name: MyString
-  social_network: MyString
   email: MyString
-  access_token: MyString
+  twitter: MyString
+  google: MyString
+  facebook: MyString

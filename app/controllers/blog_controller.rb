@@ -1,5 +1,6 @@
 class BlogController < ApplicationController
-  def index
+  def blog
+  	sidebar_contenxt
   end
 
   def login

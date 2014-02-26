@@ -1,7 +1,11 @@
 HigginsCassidy::Application.routes.draw do
+
   resources :users
 
-  get "blog/index"
+  get "static_pages/about"
+  get "static_pages/code"
+  root to: "blog#blog"
+  get "blog/blog"
   get "blog/login"
   get "blog/logout"
   resources :blogposts
