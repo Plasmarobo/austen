@@ -2,12 +2,10 @@ HigginsCassidy::Application.routes.draw do
 
   resources :users
 
-  get "static_pages/about"
-  get "static_pages/code"
+  get 'about' => 'static_pages/about'
+  get 'code' => 'static_pages/code'
   root to: "blog#blog"
-  get "blog/blog"
-  get "blog/login"
-  get "blog/logout"
+  resources :blog
   resources :blogposts
 
   # The priority is based upon order of creation: first created -> highest priority.
