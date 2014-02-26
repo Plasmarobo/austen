@@ -51,6 +51,4 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-group :development do
-  gem 'rails_layout'
-end
+gem 'rails_layout', group: :development
