@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @user.name
+%p
+  %b Email:
+  = @user.email
+%p
+  %b Twitter:
+  = @user.twitter
+%p
+  %b Google:
+  = @user.google
+%p
+  %b Facebook:
+  = @user.facebook
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path
