@@ -1,0 +1,10 @@
+.container.centered
+	%p
+		="As of #{@post.create}!"
+		%br
+		%strong 
+			=@post.name
+
+	%p
+		=markdown(@post.body)
+

@@ -52,3 +52,8 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'rails_layout', group: :development
+
+gem 'redcarpet'
+
+gem 'markitup-rails'
+

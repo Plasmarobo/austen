@@ -1,10 +1,15 @@
 class BlogController < ApplicationController
-  def blog
-  end
 
-  def login
-  end
 
-  def logout
-  end
+	include ApplicationHelper
+
+	def index
+		@post = Blogpost.order(:created_at).last
+	end
+
+	def login
+	end
+
+	def logout
+	end
 end

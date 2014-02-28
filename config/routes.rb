@@ -2,7 +2,7 @@ HigginsCassidy::Application.routes.draw do
 
   get 'about' => 'static_pages/about'
   get 'code' => 'static_pages/code'
-  root to: "blog#blog"
+  root to: "blog#index"
   resources :blog
   resources :blogposts
 
