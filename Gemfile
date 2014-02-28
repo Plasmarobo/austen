@@ -57,3 +57,4 @@ gem 'redcarpet'
 
 gem 'markitup-rails'
 
+gem 'devise'
