@@ -88,6 +88,6 @@ HigginsCassidy::Application.configure do
     user_name: ENV["SENDGRID_USERNAME"],
     passowrd: ENV["SENDGRID_PASSWORD"]
   }
-  config.secret_token = ENV['DEVISE_SECRET']
+  config.secret_token = ENV['APP_SECRET']
 
 end
