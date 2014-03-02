@@ -61,4 +61,3 @@ gem 'devise'
 
 gem 'figaro'
 
-gem 'sendgrid'
