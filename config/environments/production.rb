@@ -79,7 +79,7 @@ HigginsCassidy::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
   config.action_mailer.default_url_options = { :host => 'app22510710@heroku.com' }
   config.action_mailer.delivery_method = :smtp
-  config.action_mailers.smtp_settings = {
+  config.action_mailer.smtp_settings = {
     address: "smtp.sendgrid.net",
     port: 25,
     domain: "heroku.com",
