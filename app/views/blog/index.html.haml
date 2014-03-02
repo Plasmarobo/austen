@@ -1,10 +1,14 @@
 .container.centered
-	%p
-		="As of #{@post.create}!"
-		%br
-		%strong 
-			=@post.name
+	-if not @post.nil?
 
+		%p
+			="As of #{@post.create}!"
+			%br
+			%strong 
+				=@post.name
+
+		%p
+			=markdown(@post.body)
 	%p
-		=markdown(@post.body)
+		=link_to "Archive", "/blogposts"
 

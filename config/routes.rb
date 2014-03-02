@@ -1,8 +1,9 @@
 HigginsCassidy::Application.routes.draw do
 
+  devise_for :admins
   devise_for :users
-  get 'about' => 'static_pages/about'
-  get 'code' => 'static_pages/code'
+  get 'about' => 'static_pages#about'
+  get 'code' => 'static_pages#code'
   root to: "blog#index"
   resources :blog
   resources :blogposts

@@ -1,12 +1,12 @@
 class BlogpostsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_admin!, except: [:show, :index]
   before_action :set_blogpost, only: [:show, :edit, :update, :destroy]
 
 
   # GET /blogposts
   # GET /blogposts.json
   def index
-    @blogposts = Blogpost.all
+    @blogposts = Blogpost.all.order(:created_at)
   end
 
   # GET /blogposts/1
