@@ -58,3 +58,7 @@ gem 'redcarpet'
 gem 'markitup-rails'
 
 gem 'devise'
+
+gem 'figaro'
+
+gem 'sendgrid'
