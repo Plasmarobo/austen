@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-HigginsCassidy::Application.config.secret_key_base = 'f09ede017cab1d04a7592c489088dda76b7dbf4f097944232c3fb886e61cec80ae24f27e4af5157b4884daf6492b011a1f32fdb1420fe177a5de499d0c85fe73'
+HigginsCassidy::Application.config.secret_key_base = ENV['APP_SECRET']
