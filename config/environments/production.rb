@@ -88,6 +88,6 @@ HigginsCassidy::Application.configure do
     user_name: ENV["SENDGRID_USERNAME"],
     passowrd: ENV["SENDGRID_PASSWORD"]
   }
-  config.secret_token = Figaro.env.app_secret
+  config.secret_token = ENV["SECRET_TOKEN"]
 
 end

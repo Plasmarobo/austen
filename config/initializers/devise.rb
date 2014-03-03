@@ -25,8 +25,7 @@ Devise.setup do |config|
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
   # authenticating a user, both parameters are required. Remember that those
-  # parameters are used only when authenticating and
-   not when retrieving from
+  # parameters are used only when authenticating and not when retrieving from
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
@@ -252,5 +251,5 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
-  config.secret_key = Figaro.env.devise_secret
+  config.secret_key = ENV["DEVISE_SECRET_KEY"]
 end

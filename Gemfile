@@ -56,3 +56,5 @@ gem 'rails_layout', group: :development
 gem 'devise'
 
 gem 'bootstrap-wysihtml5-rails'
+
+gem 'figaro'
