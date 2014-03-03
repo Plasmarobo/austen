@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-HigginsCassidy::Application.config.secret_key_base = ENV['APP_SECRET']
+HigginsCassidy::Application.config.secret_key_base = Figaro.env.app_secret_base

@@ -53,8 +53,6 @@ end
 
 gem 'rails_layout', group: :development
 
-gem 'markitup-rails'
-
 gem 'devise'
 
 gem 'bootstrap-wysihtml5-rails'
