@@ -53,11 +53,8 @@ end
 
 gem 'rails_layout', group: :development
 
-gem 'redcarpet'
-
 gem 'markitup-rails'
 
 gem 'devise'
 
-gem 'figaro'
-
+gem 'bootstrap-wysihtml5-rails'

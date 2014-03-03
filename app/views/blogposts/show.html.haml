@@ -7,7 +7,7 @@
             =@blogpost.name
 
         %p
-            =markdown(@blogpost.body)
+            =@blogpost.body.html_safe
 
         %p
             %strong Created:

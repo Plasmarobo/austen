@@ -15,6 +15,6 @@
         %br
     .blog_body
       %p
-        =markdown(@post.body)
+        =@post.body.html_safe
       
 
