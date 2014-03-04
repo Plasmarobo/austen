@@ -7,25 +7,64 @@
 	padding-left:16px;
 	padding-right:16px;
 }
-.blog_header
+
+.blog-icon
 {
-  width:80%;
-  height:256px;
+  width:128px;
+  height:128px;
+  margin: 0;
+  float:left;
 }
 
-.blog_title_item
+.blog-header
 {
-  width:100%;
+  float:left;
+}
+.blog-header-block
+{
+  float:left;
 }
 
-.blog_body
+.blog-title
 {
-  width:100%;
+  margin-top:30px;
+  margin-bottom:0;
+  font-size: 60px;
+  font-weight: normal;
+  font-family: "Helvetica Neue";
 }
 
-.blog_icon
+.blog-subtitle
 {
-  width:20%;
-  height:256px;
-  margin-right:0px;
+  color:#aaa;
 }
+
+.blog-body{
+  
+}
+
+.blog-post{
+  font-family:Georgia;
+}
+
+.blog-post-title
+{
+  font-family: "Helvetica Neue";
+}
+
+.blog-post-meta{
+  color:#3a3a3f;
+}
+
+.blog-sidebar{
+  
+}
+
+
+.sidebar-module{}
+
+.sidebar-module-inset{
+  background-color:#eee;
+  padding:15px;
+}
+

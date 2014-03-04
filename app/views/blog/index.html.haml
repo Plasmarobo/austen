@@ -1,20 +1,31 @@
 .container.centered
-  -if not @post.nil?
+  .blog-header
+    =image_tag 'blog_large.png', class: 'blog-icon'
+    .blog-header-block
+      %h1.blog-title
+        The AH-C Incident
+      %p.blog-subtitle
+        (Or how I learned to stop worrying and love the blog)
+  .row
+    .col-sm-8.blog-body
+      -@recent_posts.each() do |post|
+        .blog-post
+          %h2.blog-post-title
+            =post.name
+          %p.blog-post-meta
+            =post.create
+            via Austen
+          =post.body.html_safe  
+    .col-sm-3.col-sm-offset-1.blog-sidebar
+      .sidebar-module.sidebar-module-inset
+        %h4 About
+        %p 
+          =link_to 'Austen Higgins-Cassidy', '/about' 
+          is a Computer Engineer who dabbles in web development and Software Engineering. He also occasionally writes, cooks, paints (various things), and builds.
+      .sidebar-module
+        %h4
+          =link_to 'Archives', '/blogposts/'
 
-    .blog_icon
-      =image_tag 'blog_large.png'
-    .blog_header
-      .blog_title_item
-        %h1
-          =@post.name
-      .blog_title_item
-        ="As of #{@post.create}!"
-        ( 
-        =link_to "Archive", "/blogposts"
-        )
-        %br
-    .blog_body
-      %p
-        =@post.body.html_safe
-      
+        
+
 

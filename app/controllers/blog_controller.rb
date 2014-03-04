@@ -4,12 +4,7 @@ class BlogController < ApplicationController
 	include ApplicationHelper
 
 	def index
-		@post = Blogpost.order(:created_at).last
+		@recent_posts = Blogpost.all.order('created_at DESC').take(4);
 	end
 
-	def login
-	end
-
-	def logout
-	end
 end

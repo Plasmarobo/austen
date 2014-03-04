@@ -36,12 +36,23 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
+  background-color: #fff;
   padding-bottom: 80px;
   padding-top: 80px;
   width: 100%;
-  margin-top: 122px; // accommodate the navbar
   }
+@media only screen and (min-width: $screen-sm-min) 
+ {
+  main {
+    padding-top: 120px;
+  }
+}
+@media only screen and (min-width: $screen-lg-min) 
+{
+  main {
+    padding-top:50px;
+  }
+}
 section {
   @extend .row;
   margin-top: 20px;
