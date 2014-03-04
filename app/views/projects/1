@@ -1,0 +1,20 @@
+= form_for @project_subelement do |f|
+  - if @project_subelement.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@project_subelement.errors.count, "error")} prohibited this project_subelement from being saved:"
+      %ul
+        - @project_subelement.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :status
+    = f.select :status, options_for_select([["Completed", @project_sybelement.COMPLETED],["In Progress", @project_subelement.IN_PROGRESS],["Future", @project_subelement.FUTURE],["Default", 0]])
+  .field
+    = f.label :finished
+    = f.checkbox :is_finished
+    = f.datetime_select :finished
+  .actions
+    = f.submit 'Save'

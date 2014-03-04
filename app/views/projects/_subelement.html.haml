@@ -1,3 +1,15 @@
 %li 
-  %h4 =elem.name
-  %p = elem.desc
+  %h4
+    -case elem.status
+    -when elem.COMPLETED
+      .status_completed
+        =elem.name
+    -when elem.IN_PROGRESS
+      .status_inprogress
+        =elem.name
+    -when elem.FUTURE
+      .status_future
+        =elem.name
+    -else 
+      .status_default
+        =elem.name
