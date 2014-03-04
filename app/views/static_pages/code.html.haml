@@ -1,5 +1,19 @@
 .container
-	%h1 Code chunks
-	%p Some work I've done not really worthy of GitHub, but occasionally useful
-	%p Whoops, all my wolrd-ready projects are on GitHub at the moment! Will be filling this out in the future! 
-	%p Check back later! 
+  .row
+    .col-sm-6
+      %p 
+        Looks like I missing some content! 
+      %p
+        Not to worry, this section is under construction! Check back later!
+    .col-sm-6
+      %h4 
+        GitHub Heartbeat
+      .blog-subtitle
+        As of 
+        =@feed.updated
+      %ul
+        -@feed.each_entry do |entry|
+          %li.blog-feed
+            =entry.title.split(' ')[1..-1].join(' ')
+
+

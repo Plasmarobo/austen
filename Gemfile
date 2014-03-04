@@ -58,3 +58,5 @@ gem 'devise'
 gem 'bootstrap-wysihtml5-rails'
 
 gem 'figaro'
+
+gem 'ratom'

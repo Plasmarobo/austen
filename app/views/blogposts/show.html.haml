@@ -2,17 +2,13 @@
     %p{id: "notice"} 
         =notice
 
-    %p
-        %strong 
+    .blog-post
+          %h2.blog-post-title
             =@blogpost.name
-
-        %p
-            =@blogpost.body.html_safe
-
-        %p
-            %strong Created:
+          %p.blog-post-meta
             =@blogpost.create
-
-
-    =link_to 'Edit', edit_blogpost_path(@blogpost) |
+            via Austen
+          =@blogpost.body.html_safe 
+    -if admin_signed_in? 
+        =link_to 'Edit', edit_blogpost_path(@blogpost) |
     =link_to 'Back', blogposts_path
