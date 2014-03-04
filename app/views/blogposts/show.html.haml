@@ -1,14 +1,13 @@
 .container.centered
-    %p{id: "notice"} 
-        =notice
-
-    .blog-post
-          %h2.blog-post-title
-            =@blogpost.name
-          %p.blog-post-meta
-            =@blogpost.create
-            via Austen
-          =@blogpost.body.html_safe 
-    -if admin_signed_in? 
-        =link_to 'Edit', edit_blogpost_path(@blogpost) |
-    =link_to 'Back', blogposts_path
+  %p{id: "notice"} 
+    =notice
+  .blog-post
+    %h2.blog-post-title
+      =@blogpost.name
+    %p.blog-post-meta
+      =@blogpost.create
+      via Austen
+    =@blogpost.body.html_safe 
+  -if admin_signed_in? 
+    =link_to 'Edit', edit_blogpost_path(@blogpost) |
+  =link_to 'Back', blogposts_path
