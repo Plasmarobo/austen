@@ -1,7 +1,7 @@
 %h1 Editing project
 
 = render 'form'
-
+= render 'elements', locals: {@project: @project}
 = link_to 'Show', @project
 \|
 = link_to 'Back', projects_path

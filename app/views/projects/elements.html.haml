@@ -1,0 +1,23 @@
+.row
+  .col-md-6.elements
+    .row
+      .col-sm-12
+        Project Elements
+      .col-sm-1
+        =image_tag 'add.png', onclick: "new_element(#{@project})"
+    -@project.project_elements.each do |elem|
+      .row {onclick: "select_element()"}
+        .col-sm-12
+          =elem.name
+        .col-sm-1
+          =image_tag 'remove.png', onclick: "destroy_element(#{elem})"
+  .com-md-6.subelements
+     .row
+       
+       .col-sm-12.subelem-name
+       .com-sm-1
+         =image_tag 'add.png', id: "subelem-add"
+       .subelem-list
+          
+       
+    
