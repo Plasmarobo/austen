@@ -1,5 +1,7 @@
 HigginsCassidy::Application.routes.draw do
 
+  resources :projects
+
   devise_for :admins
   devise_for :users
   get 'about' => 'static_pages#about'

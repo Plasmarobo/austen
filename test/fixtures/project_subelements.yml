@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  project_element_id: 1
+  status: 1
+  finished: 2014-03-04 12:24:02
+
+two:
+  name: MyString
+  project_element_id: 1
+  status: 1
+  finished: 2014-03-04 12:24:02

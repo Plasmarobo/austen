@@ -1,0 +1,19 @@
+.container
+  %p#notice= notice
+
+  %p
+    = image_tag @project.image
+    %b Name:
+    = @project.name
+    (
+    = @project.started
+    \-
+    = @project.finished? @project.finished : "Present"
+  %p
+    = @project.desc
+  -@project.project_element.each do |elem|
+    .row
+      =render '_element', locals: {elem: elem}
+  = link_to 'Edit', edit_project_path(@project)
+  \|
+  = link_to 'Back', projects_path
