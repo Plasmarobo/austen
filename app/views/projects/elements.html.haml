@@ -6,9 +6,11 @@
       .col-sm-1
         =image_tag 'add.png', onclick: "new_element(#{@project})"
     -@project.project_elements.each do |elem|
-      .row {onclick: "select_element()"}
-        .col-sm-12
+      .row {onclick: "select_element(elem)"}
+        .col-sm-11
           =elem.name
+        .col-sm-1
+          =image_tag 'edit.png', onclick: "edit_element(#{elem})"
         .col-sm-1
           =image_tag 'remove.png', onclick: "destroy_element(#{elem})"
   .com-md-6.subelements

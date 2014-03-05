@@ -5,3 +5,7 @@
 = link_to 'Show', @project
 \|
 = link_to 'Back', projects_path
+.new_dialog {id: 'new_element'}
+  =render '_form_element' locals: {@project_element: ProjectElement.new}
+.new_dialog {id: 'new_subelement'}
+  =render '_form_subelement', locals: {@project_subelement: ProjectSubelement.new}
