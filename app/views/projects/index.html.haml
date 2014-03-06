@@ -20,7 +20,7 @@
             = link_to 'Destroy', project, :method => :delete, :data => {configm: 'Are you sure?'}
             ) 
           %td= project.started
-          %td= project.finished? project.finished : "In Progress"
+          %td= project.isFinished ? project.finished : "In Progress"
           %td= project.desc
           %td= image_tag project.image
       %br

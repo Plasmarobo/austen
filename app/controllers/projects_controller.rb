@@ -19,6 +19,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    @form_element = ProjectElement.new
+    @form_subelement = ProjectSubelement.new
   end
 
   # POST /projects

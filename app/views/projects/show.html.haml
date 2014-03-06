@@ -8,10 +8,10 @@
     (
     = @project.started
     \-
-    = @project.finished? @project.finished : "Present"
+    = @project.finished ? @project.finished : "Present"
   %p
     = @project.desc
-  -@project.project_element.each do |elem|
+  -@project.project_elements.each do |elem|
     .row
       =render '_element', locals: {elem: elem}
   = link_to 'Edit', edit_project_path(@project)

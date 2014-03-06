@@ -14,12 +14,14 @@
     = f.datetime_select :started
   .field
     = f.label :finished
-    = f.datetime_select :finished
+    = check_box_tag :project_is_finished
+    .project_finished_hidden
+      = f.datetime_select :finished
   .field
     = f.label :desc
     = f.text_field :desc
   .field
     = f.label :image
     = f.text_field :image
-  .actions
+  .actions.project_submit
     = f.submit 'Save'

@@ -1,9 +1,9 @@
-= form_for @project_element do |f|
-  - if @project_element.errors.any?
+=form_for @form_element do |f|
+  - if @form_element.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@project_element.errors.count, "error")} prohibited this element from being saved:"
+      %h2= "#{pluralize(@form_element.errors.count, "error")} prohibited this element from being saved:"
       %ul
-        - @project_element.errors.full_messages.each do |msg|
+        - @form_element.errors.full_messages.each do |msg|
           %li= msg
 
   .field
@@ -11,12 +11,22 @@
     = f.text_field :name
   .field
     = f.label :status
-    = f.select :status, options_for_select([["Complete", @project_element.COMPLETED], ["In Progress", @project_element.IN_PROGRESS], ["Future", @project_element.FUTURE, ["Default", 0]])
+    = f.select :status, options_for_select( |
+      [ |
+      ["Complete", @form_element.COMPLETED], |
+      ["In Progress", @form_element.IN_PROGRESS], |
+      ["Future", @form_element.FUTURE], |
+      ["Default", @form_element.DEFAULT] |
+      ] |
+      ) |
+
   .field
     = f.label :finished
-    = f.datetime_select :finished
+    = check_box_tag :element_is_finished, true
+    .element_finished_hidden
+      = f.datetime_select :finished
   .field
     = f.label :body
     = f.text_field :body
-  .actions
+  .actions.element_submit
     = f.submit 'Save'
