@@ -1,13 +1,7 @@
 HigginsCassidy::Application.routes.draw do
-
-  get "project_subelements/index"
-  get "project_subelements/new"
-  get "project_subelements/edit"
-  get "project_subelements/destroy"
-  get "project_elements/index"
-  get "project_elements/new"
-  get "project_elements/edit"
-  get "project_elements/destroy"
+  
+  resources :project_subelements
+  resources :project_elements
   resources :projects
 
   devise_for :admins

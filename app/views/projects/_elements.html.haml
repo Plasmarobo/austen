@@ -1,24 +1,23 @@
 .row
-  .col-md-6.elements
-    .row
-      .col-sm-12
+  .col-sm-12
         Project Elements
-      .col-sm-1
-        =image_tag 'add.png', onclick: "new_element(#{@project})"
-    -@project.project_elements.each do |elem|
+      .col-sm-1.add_icon
+        -if admin_signed_in?
+          =image_tag 'add.png', onclick: "new_element(#{project_id})"
+  .col-md-6.elements
+    -@elements.each do |elem|
       .row{onclick: "select_element(elem)"}
         .col-sm-11
-          =elem.name
-        .col-sm-1
-          =image_tag 'edit.png', onclick: "edit_element(#{elem})"
-        .col-sm-1
-          =image_tag 'remove.png', onclick: "destroy_element(#{elem})"
+          =elem.decorate(elem.name)
+        .col-sm-1.edit_icon
+          -if admin_signed_in?
+            =image_tag 'edit.png', onclick: "edit_element(elem.id)"
+        .col-sm-1.remove_icon
+            =image_Tag 'remove.png', onclick: "remove_element(elem.id)"
   .com-md-6.subelements
-    .row
-      .col-sm-12.subelem-name
-      .com-sm-1
-        =image_tag 'add.png', id: "subelem-add"
-      .subelem-list
+    .subelement_list
+      =render 'subelements', object: @elements.first.project_subelements
+
           
        
     
