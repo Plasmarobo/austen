@@ -11,12 +11,12 @@
     = @project.finished ? @project.finished : "Present"
   %p
     = @project.desc
-  =render 'elements', object: @project.project_elements, locals: {project_id: @project.id}
+  =render 'elements',  elements: @elements, project_id: @project.id
   = link_to 'Edit', edit_project_path(@project)
   \|
   = link_to 'Back', projects_path
 -if admin_signed_in?
   .element_dialog{id: 'element_dialog'}
-    =render 'project_elements#form', object: ProjectElements.new
+    =render 'project_elements/form', object: ProjectElements.new
   .subelement_dialog{id: 'subelement_dialog'}
-    =render 'project_subelements#form', object: ProjectSubelements.new
+    =render 'project_subelements/form', object: ProjectSubelements.new

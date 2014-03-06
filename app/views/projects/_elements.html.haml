@@ -1,11 +1,12 @@
 .row
   .col-sm-12
-        Project Elements
-      .col-sm-1.add_icon
-        -if admin_signed_in?
-          =image_tag 'add.png', onclick: "new_element(#{project_id})"
-  .col-md-6.elements
-    -@elements.each do |elem|
+    Project Elements
+  .col-sm-1.add_icon
+    -if admin_signed_in?
+      =image_tag 'add.png', onclick: "new_element(#{project_id})"
+.row
+  .col-md-5.elements
+    - elements.each do |elem|
       .row{onclick: "select_element(elem)"}
         .col-sm-11
           =elem.decorate(elem.name)
@@ -13,10 +14,12 @@
           -if admin_signed_in?
             =image_tag 'edit.png', onclick: "edit_element(elem.id)"
         .col-sm-1.remove_icon
-            =image_Tag 'remove.png', onclick: "remove_element(elem.id)"
+          =image_tag 'remove.png', onclick: "remove_element(elem.id)"
+  .com-md-1
+    =image_tag 'chevron.png'
   .com-md-6.subelements
     .subelement_list
-      =render 'subelements', object: @elements.first.project_subelements
+      =render 'subelements', subelements: elements.first.project_subelements
 
           
        

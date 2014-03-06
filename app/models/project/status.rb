@@ -24,7 +24,7 @@ module Project::Status
       else
         div += "status_default"
     end
-    return div + ">#{str}</div>"
+    return (div + ">#{str}</div>").html_safe
   end
 
 

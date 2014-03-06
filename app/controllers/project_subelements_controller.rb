@@ -31,5 +31,4 @@ class ProjectSubelementsController < ApplicationController
     def projectsubelement_params
       params.require(:project).permit(:name, :status, :is_finished, :finished)
     end
-  end
 end

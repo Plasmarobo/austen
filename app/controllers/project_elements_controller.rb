@@ -36,5 +36,4 @@ class ProjectElementsController < ApplicationController
     def projectelement_params
       params.require(:project).permit(:name, :body, :status, :is_finished, :finished)
     end
-  end
 end
