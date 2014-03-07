@@ -3,6 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+
+  window.element_id = $('.elements').children('.listitem').first().attr('element_id')
   $('#element_is_finished').change ->
     (if @checked then $('.element_finished_hidden').show() else $('.element_finished_hidden').hide())
     return
@@ -10,8 +12,9 @@ $ ->
   $('.elements').children('.listitem').click ->
       $('.elements').children('.listitem').removeClass('selected')
       $(this).addClass('selected')
+      window.element_id = $(this).attr("element_id")
       $('.subelement_lust').html("Loading...")
-      $.ajax('/project_elements/' + $(this).attr("element_id") + '/subelements', dataType: 'html').done (data, status, jqXHR) ->
+      $.ajax('/project_elements/' + window.element_id + '/subelements', dataType: 'html').done (data, status, jqXHR) ->
         $('.subelement_list').html(data)
 
   $('.add_element').click ->
@@ -31,7 +34,3 @@ $ ->
       else
         $('#element_dialog').html(data)      
     false
-
-  $('.edit_element').click ->
-
-  $('.remove_element').click ->

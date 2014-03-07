@@ -10,9 +10,19 @@ $ ->
     return
 
   $('.add_subelement').click ->
+    $('#subelement_dialog').show()
 
-  $('.subelement.listitem').click ->
-
-  $('.edit_subelement').click ->
-
-  $('.remove_subelement').click ->
+  $('#new_project_subelement').submit (e)->
+    e.preventDefault();
+    postData = $('#new_project_subelement').serializeArray()
+    postData.push({name: 'project_subelement[project_element_id]', value: window.element_id
+    url = '/project_subelements.ajax'
+    obj = $.ajax url: url, type: "POST", data: postData
+    obj.done (data, status, jqXHR) ->
+      if data == "success"
+        $('#subelement_dialog').hide()
+        $.ajax('/project_elements/'+ window.element_id + '/subelements.ajax').done (data, status, jqXHR) ->
+          $('.subelement_list').html(data)
+      else
+        $('#subelement_dialog').html(data)      
+    false
