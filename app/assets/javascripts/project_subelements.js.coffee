@@ -3,17 +3,16 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-new_subelement = (element_id) ->
-  return 0
-
-destroy_subelement = (subelement_id) ->
-  return 0
-
-edit_subelement = (subelement_id) ->
-  return 0
-
 
 $ ->
   $('#subelement_is_finished').change ->
     (if @checked then $('.subelement_finished_hidden').show() else $('.subelement_finished_hidden').hide())
     return
+
+  $('.add_subelement').click ->
+
+  $('.subelement.listitem').click ->
+
+  $('.edit_subelement').click ->
+
+  $('.remove_subelement').click ->

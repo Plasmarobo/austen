@@ -3,22 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .status_completed
 {
-  color:#AAFFAA;
+  color:#009900;
 }
 
 .status_inprogress
 {
-  color:#AAAAFF;
+  color:#0099FF;
 }
 
 .status_future
 {
-  color:#FFAAAA;
+  color:#CC0000;
 }
 
 .status_default
 {
-  color:#AAAAAA;
+  color:#DDDDDD;
 }
 
 .new_dialog
@@ -36,5 +36,93 @@
   
 }
 
+.blanket
+{
+  width:100%;
+  height:100%;
+  margin:auto;
+  opacity:0.85;
+  background-color:black;
+  display:none;
+  position:absolute;
+  top: 0;
+  left: 0;
+}
 
+.new_dialog
+{
+  padding:10%;
+  margin-top:15%;
+  hieght:65%;
+  margin-left:25%;
+  width:50%;
+  background-color:#FFFFFF;
+  border: 5px;
+  border-radius: 5px;
+  opacity: 1;
+}
 
+.divide
+{
+  height:512px;
+}
+
+.projectheader
+{
+  font-famil: Georgia;
+}
+
+.elements
+{
+  padding:5px;
+  height:256px;
+  overflow-y:auto;
+  overflow-x:visible;
+  border: 5px;
+  border-radius: 5px;
+  background-color: #ddd;
+  font-size:18px;
+  font-weight:bolder;
+  font-family: "Helvetica Nue";
+
+}
+
+.subelements
+{
+  padding:5px;
+  height:256px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  border: 5px;
+  border-radius: 5px;
+  background-color: #ddd;
+  font-size:18px;
+  font-weight:bolder;
+  font-family: "Helvetica Nue";
+}
+
+.listitem
+{
+  margin:2px;
+  background-color:#eeeeee;
+}
+
+.add_icon
+{
+  margin-top:10px;
+}
+.edit_icon
+{
+  min-height:24px;
+  min-width:24px;
+}
+.remove_icon
+{
+  min-height:24px;
+  min-width:24px;
+}
+
+.selected
+{
+  background-color:#00CCff;
+}

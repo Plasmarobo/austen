@@ -10,6 +10,15 @@ module Project::Status
     return self.status == self.COMPLETED
   end
 
+  def self.select_options
+      return [ 
+      ["Complete", Project::Status::COMPLETED], 
+      ["In Progress",  Project::Status::IN_PROGRESS], 
+      ["Future",  Project::Status::FUTURE], 
+      ["Default",  Project::Status::DEFAULT] 
+      ]
+  end
+
   def decorate(str)
     div = "<div class="
     case self.status

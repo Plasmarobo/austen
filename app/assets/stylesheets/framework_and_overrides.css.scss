@@ -62,5 +62,9 @@ section {
 {
   padding:none;
 }
+.supress_margin
+{
+  margin: 0;
+}
 
 @media (min-width: 981px) { body { padding-top: 60px; } }

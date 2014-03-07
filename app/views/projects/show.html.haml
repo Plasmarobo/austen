@@ -1,22 +1,25 @@
 .container
   %p#notice= notice
-
+  %input{type: 'hidden', id: 'project_id', value: @project.id}
   %p
     = image_tag @project.image
     %b Name:
     = @project.name
-    (
-    = @project.started
-    \-
-    = @project.finished ? @project.finished : "Present"
+    = surround '(',')' do
+      =@project.started 
+      to
+      =@project.finished ? @project.finished : "Present"
   %p
     = @project.desc
-  =render 'elements',  elements: @elements, project_id: @project.id
+  .element_container
+    =render 'elements',  elements: @elements, project_id: @project.id
   = link_to 'Edit', edit_project_path(@project)
   \|
   = link_to 'Back', projects_path
 -if admin_signed_in?
-  .element_dialog{id: 'element_dialog'}
-    =render 'project_elements/form', object: ProjectElements.new
-  .subelement_dialog{id: 'subelement_dialog'}
-    =render 'project_subelements/form', object: ProjectSubelements.new
+  .blanket{id: 'element_dialog'}
+    .new_dialog
+      =render 'project_elements/form', :@project_element => @new_element
+  .blanket{id: 'subelement_dialog'}
+    .new_dialog
+      =render 'project_subelements/form', :@project_subelement => @new_subelement

@@ -1,9 +1,9 @@
 =form_for @project_element do |f|
-  - if @form_element.errors.any?
+  - if @project_element.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@form_element.errors.count, "error")} prohibited this element from being saved:"
+      %h2= "#{pluralize(@project_element.errors.count, "error")} prohibited this element from being saved:"
       %ul
-        - @form_element.errors.full_messages.each do |msg|
+        - @project_element.errors.full_messages.each do |msg|
           %li= msg
 
   .field
@@ -11,14 +11,7 @@
     = f.text_field :name
   .field
     = f.label :status
-    = f.select :status, options_for_select( |
-      [ |
-      ["Complete", @form_element.COMPLETED], |
-      ["In Progress", @form_element.IN_PROGRESS], |
-      ["Future", @form_element.FUTURE], |
-      ["Default", @form_element.DEFAULT] |
-      ] |
-      ) |
+    = f.select :status, options_for_select(Project::Status.select_options)
 
   .field
     = f.label :finished
