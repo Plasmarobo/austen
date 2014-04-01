@@ -15,7 +15,7 @@ $ ->
   $('#new_project_subelement').submit (e)->
     e.preventDefault();
     postData = $('#new_project_subelement').serializeArray()
-    postData.push({name: 'project_subelement[project_element_id]', value: window.element_id
+    postData.push({name: 'project_subelement[project_element_id]', value: window.element_id})
     url = '/project_subelements.ajax'
     obj = $.ajax url: url, type: "POST", data: postData
     obj.done (data, status, jqXHR) ->
