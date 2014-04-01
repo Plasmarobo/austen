@@ -2,8 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-
-
 $ ->
   $('#subelement_is_finished').change ->
     (if @checked then $('.subelement_finished_hidden').show() else $('.subelement_finished_hidden').hide())
@@ -25,4 +23,4 @@ $ ->
           $('.subelement_list').html(data)
       else
         $('#subelement_dialog').html(data)      
-    false
+    return

@@ -31,6 +31,17 @@ $ ->
         $('#element_dialog').hide()
         $.ajax('/projects/'+ $("#project_id").val() + '/elements.ajax').done (data, status, jqXHR) ->
           $('.element_container').html(data)
+          $('.add_element').click ->
+            $('#element_dialog').show()
+          $('.add_subelement').click ->
+            $('#subelement_dialog').show()
+          $('.elements').children('.listitem').click ->
+            $('.elements').children('.listitem').removeClass('selected')
+            $(this).addClass('selected')
+            window.element_id = $(this).attr("element_id")
+            $('.subelement_lust').html("Loading...")
+            $.ajax('/project_elements/' + window.element_id + '/subelements', dataType: 'html').done (data, status, jqXHR) ->
+              $('.subelement_list').html(data)
       else
         $('#element_dialog').html(data)      
     false
