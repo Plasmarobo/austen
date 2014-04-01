@@ -41,7 +41,7 @@ class ProjectElementsController < ApplicationController
     end
   end
 
-  def elements
+  def subelements
     respond_to do |format|
       format.ajax { render 'projects/_subelements.html.haml', locals: {subelements: @project_element.project_subelements} , formats: [:haml], layout: false}
     end

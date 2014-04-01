@@ -29,9 +29,11 @@ class ProjectSubelementsController < ApplicationController
       if @project_subelement.save
         format.html { redirect_to @projectsub_element, notice: 'Element was successfully created.' }
         format.json { render action: 'show', status: :created, location: @project_subelement }
+        format.ajax { render :inline => "success", :layout => false }
       else
         format.html { render action: 'new' }
         format.json { render json: @project_subelement.errors, status: :unprocessable_entity }
+        format.ajax { render action: 'new', :layout => false }
       end
     end
   end
@@ -54,6 +56,6 @@ class ProjectSubelementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def projectsubelement_params
-      params.require(:project).permit(:name, :status, :is_finished, :finished)
+      params.require(:project_subelement).permit(:name, :status, :is_finished, :finished, :project_element_id)
     end
 end
