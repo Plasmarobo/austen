@@ -1,4 +1,4 @@
 class Project < ActiveRecord::Base
-  has_many :project_elements
+  has_many :tasks
   include Project::Status
 end
