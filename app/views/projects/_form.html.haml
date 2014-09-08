@@ -10,18 +10,13 @@
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :started
-    = f.datetime_select :started
+    = f.label :body
+    = f.text_field: :body
   .field
-    = f.label :finished
-    = check_box_tag :project_is_finished
-    .project_finished_hidden
-      = f.datetime_select :finished
+    = f.label :completion
+    = f.number_field
   .field
-    = f.label :desc
-    = f.text_field :desc
-  .field
-    = f.label :image
-    = f.text_field :image
+    = f.label :icon
+    = f.text_field :icon
   .actions.project_submit
     = f.submit 'Save'
