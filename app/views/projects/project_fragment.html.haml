@@ -1,0 +1,12 @@
+.project{id: 'project_#{project.project_id}'}
+  %h2
+    = project.name
+  .project_meter{completion: project.completion}
+  .project_toggle{onclick: 'showproject(#project_#{project.project_id})'}
+    %img{id: 'project_#{project.project_id}_tog', href: 'assets/expand.png'}
+  .project_body
+    - if !project.body.is_nil? || project.body == ""
+      .description
+        = project.body
+    - project.projects.each do |subproject|
+      = render 'projects/project_fragment', project: subproject
