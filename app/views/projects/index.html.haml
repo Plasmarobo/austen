@@ -4,6 +4,7 @@
   .row
     .col-md-6
       - @projects.each do |project|
-        = project.render()
+        - if project.parent_id.is_nil?
+          = render 'project/project_fragment' project: project
       %br
       = link_to 'New Project', new_project_path
