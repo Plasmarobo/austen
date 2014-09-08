@@ -1,27 +1,9 @@
 .container
   .row
-    %h1 Listing projects
+    %h1 Current projects:
   .row
-    %table
-      %tr
-        %th Name
-        %th Started
-        %th Finished
-        %th Desc
-        %th Image
-
+    .col-md-6
       - @projects.each do |project|
-        %tr
-          %td
-            = link_to project.name, project
-            (
-            = link_to 'Edit', edit_project_path(project) 
-            ,
-            = link_to 'Destroy', project, :method => :delete, :data => {configm: 'Are you sure?'}
-            ) 
-          %td= project.started
-          %td= project.finished.nil? ?  "In Progress" : project.finished
-          %td= project.desc
-          %td= image_tag project.image
+        = project.render()
       %br
       = link_to 'New Project', new_project_path
