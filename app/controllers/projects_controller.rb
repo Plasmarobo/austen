@@ -10,9 +10,6 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
-    @elements = @project.project_elements
-    @new_element = ProjectElement.new
-    @new_subelement = ProjectSubelement.new
   end
 
   # GET /projects/new
@@ -22,14 +19,6 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
-    @form_element = ProjectElement.new
-    @form_subelement = ProjectSubelement.new
-  end
-
-  def elements
-    respond_to do |format|
-      format.ajax { render '_elements.html.haml', locals: {elements: @project.project_elements, project_id: @project.id} , formats: [:haml], layout: false}
-    end
   end
 
   # POST /projects
@@ -80,6 +69,6 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :started, :is_finished, :finished, :desc, :image)
+      params.require(:project).permit(:name, :body, :task_id, :completion, :icon)
     end
 end
