@@ -43,31 +43,19 @@ ActiveRecord::Schema.define(version: 20140304172402) do
     t.datetime "updated_at"
   end
 
-  create_table "project_elements", force: true do |t|
-    t.string   "name"
+  create_table "project", force: true do |t|
     t.integer  "project_id"
-    t.integer  "status"
-    t.datetime "finished"
+    t.string   "name"
     t.string   "body"
+    t.integer  "completion"
+	t.string   "icon"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "project_subelements", force: true do |t|
+  create_table "task", force: true do |t|
     t.string   "name"
-    t.integer  "project_element_id"
-    t.integer  "status"
-    t.datetime "finished"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "projects", force: true do |t|
-    t.string   "name"
-    t.datetime "started"
-    t.datetime "finished"
-    t.string   "desc"
-    t.string   "image"
+	t.integer  "completion"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
