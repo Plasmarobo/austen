@@ -1,4 +1,0 @@
-  -@subelements.each do |elem|
-    .row
-      .col-md-6
-        =elem.name
