@@ -1,3 +1,6 @@
 [submodule "public/alleynoir"]
 	path = public/alleynoir
 	url = https://github.com/Plasmarobo/alleynoir.git
+[submodule "public/astroshooter"]
+	path = public/astroshooter
+	url = https://github.com/Plasmarobo/astroshooter.git
