@@ -1,0 +1,3 @@
+[submodule "public/alleynoir"]
+	path = public/alleynoir
+	url = https://github.com/Plasmarobo/alleynoir.git
