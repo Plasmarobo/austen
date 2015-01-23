@@ -61,5 +61,3 @@ gem 'bootstrap-wysihtml5-rails'
 gem 'figaro'
 
 gem 'ratom'
-
-gem 'rails_serve_static_assets', group: [:production]
