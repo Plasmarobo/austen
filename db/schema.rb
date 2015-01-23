@@ -43,13 +43,15 @@ ActiveRecord::Schema.define(version: 20140304172402) do
     t.datetime "updated_at"
   end
 
-  create_table "project", force: true do |t|
+  create_table "projects", force: true do |t|
     t.integer  "project_id"
     t.integer  "parent_id"
     t.string   "name"
     t.string   "body"
     t.integer  "completion"
     t.string   "icon"
+    t.datetime "started"
+    t.datetime "finished"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

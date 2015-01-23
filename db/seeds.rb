@@ -15,28 +15,8 @@ admin.save!
 project = Project.new(
   name: "My test",
   started: Date.today(),
-  desc: "Magical Unicorns",
-  image: "blank.png"
+  finished: nil,
+  icon: "blank.png",
+  body: "A test project",
   )
 project.save!
-
-project_element = ProjectElement.new(
-  name: "UI",
-  body: "Unicorn Interface",
-  project_id: project.id,
-  status: 1
-  )
-project_element.save!
-
-project_subelement = ProjectSubelement.new(
-  name: "Buttons",
-  status: 1,
-  project_element_id: project_element.id
-  )
-project_subelement.save!
-project_subelement = ProjectSubelement.new(
-  name: "Text!",
-  status: 2,
-  project_element_id: project_element.id
-  )
-project_subelement.save!

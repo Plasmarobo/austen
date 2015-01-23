@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.0'
+ruby '2.1.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
@@ -61,3 +61,5 @@ gem 'bootstrap-wysihtml5-rails'
 gem 'figaro'
 
 gem 'ratom'
+
+gem 'rails_12factor'
