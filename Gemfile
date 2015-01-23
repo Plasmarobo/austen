@@ -61,3 +61,5 @@ gem 'bootstrap-wysihtml5-rails'
 gem 'figaro'
 
 gem 'ratom'
+
+gem 'rails_12factor', group: :production
