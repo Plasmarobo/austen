@@ -14,6 +14,9 @@ HigginsCassidy::Application.routes.draw do
   root to: "blog#index"
   resources :blog
   resources :blogposts
+  
+  get '/alleynoir/alleynoir.html', :to => redirect('/alleynoir/alleynoir.html')
+  get '/astroshooter/game.html', :to => redirect('/astroshooter/game.html')
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
