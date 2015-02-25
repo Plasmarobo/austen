@@ -1,23 +1,23 @@
-.container.centered
-  %h1 Archive
-  .container
-    .row
-      .col-xs-2 Name
-      .col-xs-2 Created
+
+%h1 Archive
+.container
+  .row
+    .col-xs-2 Name
+    .col-xs-2 Created
+    -if admin_signed_in?
+      .col-xs-2
+      .col-xs-2
+  -@blogposts.each do |blogpost|
+    .row  
+      .col-xs-2
+        =link_to blogpost.name, blogpost
+      .col-xs-2
+        =blogpost.create
       -if admin_signed_in?
         .col-xs-2
+          =link_to 'Edit', edit_blogpost_path(blogpost)
         .col-xs-2
-    -@blogposts.each do |blogpost|
-      .row  
-        .col-xs-2
-          =link_to blogpost.name, blogpost
-        .col-xs-2
-          =blogpost.create
-        -if admin_signed_in?
-          .col-xs-2
-            =link_to 'Edit', edit_blogpost_path(blogpost)
-          .col-xs-2
-            =link_to 'Destroy', blogpost, method: :delete, data: { confirm: 'Are you sure?' }
-  -if admin_signed_in?
-    %br
-    =link_to 'New Blogpost', new_blogpost_path
+          =link_to 'Destroy', blogpost, method: :delete, data: { confirm: 'Are you sure?' }
+-if admin_signed_in?
+  %br
+  =link_to 'New Blogpost', new_blogpost_path

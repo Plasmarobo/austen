@@ -1,0 +1,22 @@
+.project{id: 'project_#{project.project_id}'}
+  %h2
+  .row
+    .col-md-1
+      = image_tag(project.icon)
+    .col-md-11
+      = project.name
+  .project_toggle{onclick: 'showproject(#project_#{project.project_id})'}
+    %img{id: 'project_#{project.project_id}_tog', href: 'assets/expand.png'}
+  .project_body
+    .timeline
+      .started
+        = project.started.to_s
+      .finished
+        = project.finished.nil? ? "Not finished" : project.finished.to_s
+    - if !project.body.nil? || project.body == ""
+      .description
+        = project.body
+    .subprojects
+      - project.projects.each do |subproject|
+        = link_to subproject.name, "project_#{subproject.project_id}"
+        %br

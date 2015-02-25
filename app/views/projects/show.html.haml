@@ -1,6 +1,5 @@
-.container
-  %p#notice= notice
-  = render 'projects/project_fragment', project: @project
+%p#notice= notice
+  = render partial: 'project_fragment', locals: {project: @project}
 -if admin_signed_in?
   = link_to 'Edit', edit_project_path(@project)
   \|

@@ -1,10 +1,8 @@
-.container
-  .row
-    %h1 Current projects:
-  .row
-    .col-md-6
-      - @projects.each do |project|
-        - if project.parent_id.is_nil?
-          = render 'project/project_fragment' project: project
-      %br
-      = link_to 'New Project', new_project_path
+.row
+  %h1 Current projects:
+.row
+  .col-md-6
+    - @projects.each do |project|
+      = render partial:'project_fragment', locals: {project: project}
+    %br
+    = link_to 'New Project', new_project_path

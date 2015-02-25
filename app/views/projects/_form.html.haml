@@ -11,10 +11,13 @@
     = f.text_field :name
   .field
     = f.label :body
-    = f.text_field: :body
+    = f.text_field :body
   .field
-    = f.label :completion
-    = f.number_field
+    = f.label :started
+    = f.dateime_field :started
+  .field
+    = f.label :finished
+    = f.datetime_field :finished
   .field
     = f.label :icon
     = f.text_field :icon

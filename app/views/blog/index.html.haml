@@ -1,4 +1,4 @@
-.container.centered
+.centered
   .blog-header
     =image_tag 'blog_large.png', class: 'blog-icon'
     .blog-header-block
@@ -6,6 +6,9 @@
         The AH-C Incident
       %p.blog-subtitle
         (Or how I learned to stop worrying and love the blog)
+      -if admin_signed_in?
+        %br
+        =link_to 'New Blogpost', new_blogpost_path
   .row
     .col-sm-8.blog-body
       -@recent_posts.each() do |post|
