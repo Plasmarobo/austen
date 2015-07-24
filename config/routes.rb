@@ -1,16 +1,15 @@
 HigginsCassidy::Application.routes.draw do
-  
 
-  get 'project_elements/:id/subelements' => 'project_elements#subelements'
-  get 'projects/:id/elements' => 'projects#elements'
-  resources :project_subelements
-  resources :project_elements
-  resources :projects
 
   devise_for :admins
   devise_for :users
   get 'about' => 'static_pages#about'
   get 'code' => 'static_pages#code'
+  scope '/clickwise' do
+    get '/' => 'static_pages#clickwise', asset: "clickwise.html"
+    get '/:asset' => 'static_pages#clickwise'
+  end
+
   root to: "blog#index"
   resources :blog
   resources :blogposts

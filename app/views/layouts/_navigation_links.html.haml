@@ -1,32 +1,28 @@
 %li
-	=link_to image_tag('blog.png'), '/blog'
 	=link_to 'Blog', '/blog'
+	=link_to image_tag('blog_large.png', width: 32, height:32), '/blog'
 %li
-	=link_to image_tag('code.png'),  '/code'
 	=link_to 'Code', '/code'
+	=link_to image_tag('code.png'),  '/code'
 %li
-	=link_to image_tag('tree.png'), '/projects'
-	=link_to 'Projects', '/projects'
-%li
-	=link_to image_tag('GitHub-Mark-32px.png'), 'https://github.com/plasmarobo'
 	=link_to 'Github', 'https://github.com/plasmarobo'
+	=link_to image_tag('GitHub-Mark-32px.png'), 'https://github.com/plasmarobo'
 %li
-	=link_to image_tag('wimap.png'), 'http://wimapnav.com'
+	=link_to 'Clickwise', '/clickwise'
+	=link_to image_tag('cwg.png'), '/clickwise'
+%li
 	=link_to 'WiMap', 'http://wimapnav.com'
+	=link_to image_tag('wimap.png'), 'http://wimapnav.com'
 %li 
-	=link_to image_tag('me.png'), '/about'
 	=link_to 'About', '/about'
+	=link_to image_tag('me.png'), '/about'
 -if user_signed_in?
 	%li 
-		=link_to image_tag('edit_me.png'), edit_user_registration_path
 		=link_to 'Profile', edit_user_registration_path
 	%li
-		=link_to image_tag('logout.png'), destroy_user_session_path, method: :delete
 		=link_to 'Logout', destroy_user_session_path, method: :delete
 -else
 	%li 
-		=link_to image_tag('login.png'), new_user_session_path
 		=link_to 'Login', new_user_session_path
 	%li 
-		=link_to image_tag('register.png'), new_user_registration_path
 		=link_to 'Register!', new_user_registration_path

@@ -12,11 +12,3 @@ admin = Admin.new(
 )
 admin.save!
 
-project = Project.new(
-  name: "My test",
-  started: Date.today(),
-  finished: nil,
-  icon: "blank.png",
-  body: "A test project",
-  )
-project.save!

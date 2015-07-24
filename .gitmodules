@@ -4,3 +4,6 @@
 [submodule "public/astroshooter"]
 	path = public/astroshooter
 	url = https://github.com/Plasmarobo/astroshooter.git
+[submodule "public/Clickwise.me"]
+	path = public/Clickwise.me
+	url = git@github.com:Plasmarobo/Clickwise.me.git
