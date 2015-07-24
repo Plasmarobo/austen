@@ -42,7 +42,7 @@ class StaticPagesController < ApplicationController
         send_file constructed_path, options
       end
     else
-      render '/public/Clickwise.me/404.html', layout: false, status: 404
+      render file: '/public/Clickwise.me/404.html', layout: false, status: 404
     end
   end
   
