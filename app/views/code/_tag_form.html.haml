@@ -1,0 +1,9 @@
+=form_for @tag, id: "tag_form", url: {action: @action} do |f|
+  .form_field
+    =f.label "Name"
+    =f.text_field :name, value: @tag.name
+  .form_field
+    =f.label "Style"
+    =f.text_field :style, value: @tag.style
+  .form_field
+    = f.submit "Submit", id: "tag_submit"

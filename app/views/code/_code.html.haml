@@ -1,0 +1,11 @@
+%script{type: "text/javascript"}
+  = "code_id=#{code.id};"
+%h1
+  = code.name
+%h4.subtitle
+  = code.subtitle
+.tags
+  = render partial: 'code_tags', locals: {tags: code.code_tags}
+.code_desc
+  -if code.desc
+    = code.desc.html_safe

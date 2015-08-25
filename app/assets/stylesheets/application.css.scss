@@ -12,3 +12,91 @@
  *= require_tree .
  *= require bootstrap-wysihtml5
  */
+
+.error
+{
+  background:#FBE3E4;
+  color:#8a1f11;
+  border-color:#FBC2C4;
+}
+
+.notice
+{
+  font-size:18pt;
+  background:#FFF6BF;
+  color:#514721;
+  border-color:#FFD324;
+}
+.success
+{
+  background:#DDFCD5;
+  color:#000;
+  border-color:#44A815;
+}
+
+.alert
+{
+  background:#FBE3E4;
+  color:#8a1f11;
+  border-color:#FBC2C4;
+}
+
+.mwin_outer_center {
+    float: right;
+    right: 50%;
+    position: relative;
+    pointer-events: none;
+}
+.mwin_inner_center {
+    float: right;
+    right: -50%;
+    position: relative;
+    pointer-events: none;
+}
+.mwin_clear {
+    clear: both;
+}
+
+.mwin
+{
+  margin-top:10em;
+  //margin-left:auto;
+  //margin-right:auto;
+  
+  max-width:60em;
+  //min-width:10em;
+  //min-height:20em;
+  padding:1em;
+  //opacity: 0.2;
+  background-color:#FFFFFF;
+  
+  //@include border-radius( 1em);
+  //background-color:#e3e3e3;
+  color:#222222;
+  z-index:1060;
+}
+
+.short
+{
+  max-width:20em;
+}
+.btn-huge {
+    padding: 18px 28px;
+    font-size: 22px; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+header{
+  z-index:50;
+}
+
+footer{
+  z-index:50;
+}
+
+.modal-backdrop {
+  z-index: -1;
+}
