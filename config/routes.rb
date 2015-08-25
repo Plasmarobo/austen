@@ -1,10 +1,47 @@
 HigginsCassidy::Application.routes.draw do
 
 
+  get 'code/code_tags'
+  post 'code/code_tags'
+  
+  get 'code/index'
+
+  get 'code/show'
+
+  get 'code/new'
+
+  get 'code/edit'
+
+  get 'code/create'
+  post 'code/create'
+
+  get 'code/update'
+  post 'code/update'
+
+  get 'code/destroy'
+
+  get 'code/edit_tag'
+
+  get 'code/update_tag'
+  post 'code/update_tag'
+
+  get 'code/new_tag'
+  post 'code/new_tag'
+  get 'code/create_tag'
+  post 'code/create_tag'
+  
+  post 'code/tag_index'
+  get 'code/tag_index'
+
+  get 'code/show_tag'
+  
+  get 'code' => 'code#index'
+
   devise_for :admins
   devise_for :users
   get 'about' => 'static_pages#about'
-  get 'code' => 'static_pages#code'
+  
+  get 'wimap' => 'static_pages#wimap'
   scope '/clickwise' do
     get '/' => 'static_pages#clickwise', asset: "clickwise.html"
     get '/:asset' => 'static_pages#clickwise'

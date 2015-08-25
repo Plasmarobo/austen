@@ -1,0 +1,17 @@
+=form_for @code, url: {action: @action} do |f|
+  .form_field
+    =f.label "Name"
+    =f.text_field :name, value: @code.name 
+  .form_field
+    =f.label "Subtitle"
+    =f.text_field :subtitle, value: @code.subtitle
+  .tags_area
+    .tag_button{onclick:"newtag();"}
+      %span{class: "glyphicon glyphicon-plus"}
+    .newtag{id: "newtag", style: "display:none"}
+    .tags{id: "tags"}
+  .form_field
+    =f.label "Description"
+    =f.text_area :desc, value: @code.desc
+  .form_field
+    =f.submit "Submit", onclick: "linkTags(event)"

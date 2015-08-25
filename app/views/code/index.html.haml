@@ -1,0 +1,8 @@
+%h1 Portfolio and Archive
+%h4 Various personal projects
+-if admin_signed_in?
+  =link_to 'New Project', action: :new
+  %br
+- @codes.each_with_index do |code, index|
+  .row.coderow{class: ((index % 2) == 0) ? "alt" : ""}
+    = render partial: 'code', locals: {code: code}

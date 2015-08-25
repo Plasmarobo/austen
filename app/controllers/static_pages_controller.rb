@@ -3,10 +3,6 @@ require 'atom'
 class StaticPagesController < ApplicationController
   def about
   end
-
-  def code
-    @feed = Atom::Feed.load_feed(URI.parse('https://github.com/Plasmarobo.atom'))
-  end
   
   def clickwise
     params.require(:asset)
@@ -46,5 +42,7 @@ class StaticPagesController < ApplicationController
     end
   end
   
+  def wimap
+  end
   
 end
