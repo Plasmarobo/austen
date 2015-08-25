@@ -16,5 +16,6 @@
 //= require jquery.turbolinks
 //= require bootstrap
 //= require bootstrap-wysihtml5
+//= require code
 
 //= require_tree .
