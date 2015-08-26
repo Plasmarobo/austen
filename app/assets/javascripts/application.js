@@ -17,5 +17,5 @@
 //= require bootstrap
 //= require bootstrap-wysihtml5
 //= require code
-
 //= require_tree .
+alert("TEST");
